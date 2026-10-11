@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RikyApps · In costruzione</title>
+<meta name="description" content="RikyApps: il sito è in costruzione.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07090d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307090d'/%3E%3Crect x='6' y='9' width='8' height='8' rx='1.5' fill='%231E88E5'/%3E%3Crect x='6' y='19' width='8' height='8' rx='1.5' fill='%23D81B60'/%3E%3Crect x='16' y='9' width='8' height='8' rx='1.5' fill='%238E24AA'/%3E%3Crect x='16' y='19' width='8' height='8' rx='1.5' fill='%23F4511E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* RikyApps - in costruzione. Lo stile di rikylab.it e delle app di
+     famiglia: scuro, Roboto Condensed, i quattro colori come luci. */
+  :root {
+    --fondo: #07090d;
+    --testo: #ffffff;
+    --tenue: #a9b1b8;
+    --accento: #52E1E7;
+    --titoli: "Roboto Condensed", "Arial Narrow", sans-serif;
+    --corpo: "Roboto", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: var(--fondo);
+    color: var(--testo);
+    font: 400 17px/1.6 var(--corpo);
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(40vmax 40vmax at 0% 0%, rgba(30, 136, 229, .22), transparent 70%),
+      radial-gradient(40vmax 40vmax at 100% 0%, rgba(142, 36, 170, .22), transparent 70%),
+      radial-gradient(40vmax 40vmax at 0% 100%, rgba(216, 27, 96, .16), transparent 70%),
+      radial-gradient(40vmax 40vmax at 100% 100%, rgba(244, 81, 30, .16), transparent 70%);
+  }
+  .pagina { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  header.pagina { padding-top: 22px; padding-bottom: 22px; }
+  .marchio { display: inline-flex; align-items: center; gap: 12px; font: 300 26px/1 var(--titoli); }
+  .marchio b { font-weight: 700; }
+  .marchio svg { width: 34px; height: 34px; flex: none; }
+
+  main.pagina { display: grid; align-content: center; padding-top: 40px; padding-bottom: 64px; }
+  h1 { margin: 0; font: 300 clamp(44px, 9vw, 92px)/.98 var(--titoli); letter-spacing: -.01em; }
+  h1 b { font-weight: 700; }
+  p { max-width: 560px; margin: 24px 0 0; color: var(--tenue); font-size: 19px; }
+
+  /* I quattro riquadri che si accendono a turno: il cantiere e' aperto. */
+  .cantiere { display: grid; grid-template-columns: repeat(2, 18px); gap: 6px; margin-top: 38px; }
+  .cantiere i { width: 18px; height: 18px; border-radius: 4px; background: var(--c); opacity: .25; animation: accendi 2.4s infinite; }
+  .cantiere i:nth-child(2) { animation-delay: .6s; }
+  .cantiere i:nth-child(4) { animation-delay: 1.2s; }
+  .cantiere i:nth-child(3) { animation-delay: 1.8s; }
+  @keyframes accendi { 0%, 100% { opacity: .25; } 20%, 40% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .cantiere i { animation: none; opacity: .8; } }
+
+  footer.pagina { padding-top: 26px; padding-bottom: 34px; border-top: 1px solid rgba(255, 255, 255, .14); color: var(--tenue); font: 400 14px var(--titoli); letter-spacing: .06em; }
+</style>
+</head>
+<body>
+  <header class="pagina">
+    <span class="marchio">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="3" y="7" width="11" height="11" rx="2" fill="#1E88E5"/>
+        <rect x="3" y="20" width="11" height="9" rx="2" fill="#D81B60"/>
+        <rect x="16" y="7" width="11" height="11" rx="2" fill="#8E24AA"/>
+        <rect x="16" y="20" width="11" height="9" rx="2" fill="#F4511E"/>
+        <path d="M2 5.5L15 1l13 4.5" fill="none" stroke="#e8eef2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Riky<b>Apps</b></span>
+    </span>
+  </header>
+
+  <main class="pagina">
+    <h1>Sito in<br><b>costruzione</b></h1>
+    <p>Qui stiamo preparando qualcosa di nuovo. Torna a trovarci presto.</p>
+    <div class="cantiere" aria-hidden="true">
+      <i style="--c: #1E88E5"></i><i style="--c: #8E24AA"></i>
+      <i style="--c: #D81B60"></i><i style="--c: #F4511E"></i>
+    </div>
+  </main>
+
+  <footer class="pagina">© 2026 RikyApps · rikyapps.it</footer>
+</body>
+</html>
